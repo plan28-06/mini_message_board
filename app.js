@@ -17,9 +17,10 @@ const messages = [
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.send("<h1>Home</h1>");
+    res.render("index",{messages:messages});
 });
 
 app.get("/new", (req, res) => {

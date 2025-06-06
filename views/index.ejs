@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mini MessageBoard</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1 class="headertext">Mini MessageBoard</h1>
+            <a href="/new">
+                <button class="new">+ New Message</button>
+            </a>
+        </div>
+        <br>
+        <div class="container">
+            <% messages.forEach((message)=>{%>
+                <div class="messagebox">
+                    <h2 id="user"><%= message.user %></h2>
+                    <h3 id="text"><%= message.text%></h3>
+                    <h3 id="time"><%= message.added%></h3>
+                </div>
+            <%})%>
+        </div>
+    </body>
+</html>
